@@ -1,72 +1,54 @@
 import Link from "next/link"
 import Image from "next/image"
 
-import { ArrowRight, CirclePlay, Goal, Eye, Gem, CheckCircle, CircleCheck } from "lucide-react"
+import { ArrowRight, CirclePlay } from "lucide-react"
 
 import StatsBarSmall from "@/components/stats-bar-small"
 import StatsBar from "@/components/stats-bar"
 import IconCard from "@/components/icon-card"
-
+import Button from "@/components/button"
+import { cardsAbout } from "@/lib/cards"
 import HeroImg from "@/assets/images/group-img.png"
 import BuildingImg from "@/assets/images/buiding-img.png"
 
 
 export default function About() {
-
-    const cards = [
-        {
-            icon: <Goal size={40} color="blue" />,
-            title: 'Our Mission',
-            desc: 'To deliver industry-focused training and hands-on experience that transforms learners into job-ready professionals.',
-        },
-        {
-            icon: <Eye size={40} color="green" />,
-            title: 'Our Vision',
-            desc: 'To be the most trusted learning partner in Nepal and beyond for DevOps and Cloud technologies.',
-        },
-        {
-            icon: <Gem size={40} color="purple" />,
-            title: 'Our Values',
-            desc: <ul className="flex flex-col gap-1">
-                <li className="flex items-center gap-1"><CircleCheck size={15} color="purple"/><span> Quality Education</span></li>
-                <li className="flex items-center gap-1"><CircleCheck size={15} color="purple"/><span> Practical Learning</span></li>
-                <li className="flex items-center gap-1"><CircleCheck size={15} color="purple"/><span> Integrity &</span> Trust</li>
-                <li className="flex items-center gap-1"><CircleCheck size={15} color="purple"/><span> Student Success</span></li>
-            </ul>,
-        }
-    ]
-
+    const cards = cardsAbout;
     return (
         <div className="px-10 lg:px-20 py-10">
-            <div className="flex items-center">
+            <div className="flex">
                 {/* left part */}
-                <div className="flex flex-col items-center text-center lg:text-left lg:items-start max-md:items-center max-md:text-center max-w-full lg:max-w-2/5">
-                    <p className="text-sm bg-gray-200 text-indigo-700 font-bold py-2 px-3 rounded-2xl mb-1">ABOUT INNOVA BRIDGE</p>
-                    <h1 className="text-5xl font-bold leading-15">Building Careers.<br /><span className="text-indigo-800">Bridging Possibilities.</span></h1>
+                <div className="flex flex-col items-center text-center lg:text-left lg:items-start max-md:items-center max-md:text-center max-w-full lg:max-w-2/5 lg:pr-5">
+                    <p className="text-sm bg-gray-200 text-indigo-800 font-bold py-2 px-3 rounded-2xl mb-1 tracking-wider">ABOUT INNOVA BRIDGE</p>
+                    <h1 className="text-5xl font-bold leading-13">Building Careers.<br /><span className="text-indigo-800">Bridging Possibilities.</span></h1>
                     <p className="my-5 leading-7 text-gray-800">Innova Bridge is a leading IT training and innovation hub that empowers individuals with real-world skills in DevOps, Cloud, and Modern Technologies to build successful careers.</p>
 
                     <div className="flex flex-col items-center gap-5 sm:flex-row">
-                        <div className="flex items-center gap-2 bg-indigo-800 hover:bg-indigo-700 py-3 px-5 rounded-xl font-bold text-white">
+                        {/* <div className="flex items-center gap-2 bg-indigo-800 hover:bg-indigo-700 py-3 px-5 rounded-xl font-bold text-white">
                             <Link href=''>Explore Trainings</Link>
                             <ArrowRight size={30} />
-                        </div>
+                        </div> */}
+
+                        <Button padding='px-3 py-2'>Explore Trainings <span><ArrowRight size={25} /></span></Button>
 
                         <div className="flex items-center border border-gray-600
-                        bg-white transition-all ease-in-out duration-200 hover:scale-102 py-3 px-5 rounded-xl font-bold gap-5">
+                        bg-white transition-all ease-in-out duration-200 hover:scale-102 px-3 py-2 rounded-xl font-bold gap-5">
                             <CirclePlay size={30} color="purple" />
                             <Link href=''>Watch Our Story</Link>
                         </div>
                     </div>
-
                 </div>
 
                 {/* right part */}
-                <div className="max-lg:hidden md:max-w-3/5 ml-30">
-                    <div className="relative">
-                        <Image width={2000} height={150} src={HeroImg} alt="testImg" className="rounded-2xl" />
+                <div className="flex flex-col max-lg:hidden md:max-w-3/5">
+                    <div className="h-20"></div>
+                    <div>
+                        <div className="relative">
+                            <Image width={2000} height={150} src={HeroImg} alt="testImg" className="rounded-2xl" />
 
-                        <div className="absolute -bottom-20 max-w-full">
-                            <StatsBarSmall />
+                            <div className="absolute -bottom-20 max-w-full">
+                                <StatsBarSmall />
+                            </div>
                         </div>
                     </div>
                 </div>

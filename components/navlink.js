@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function NavLink({ href, children }) {
     const path = usePathname();
     if (href === '/why Innova?') {
-        href = '/whyInnova'
+        href = '/why-innova'
     }
     const isActive = href === '/' ? path === '/' : path.startsWith(href);
     return (

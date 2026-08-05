@@ -1,9 +1,9 @@
 import { stats } from "@/lib/stats"
 import Stats from "./stats"
 
-export default function StatsBar() {
+export default function StatsBarImpact() {
     return (
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:items-center gap-5 md:gap-10 px-10">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:items-center gap-5 md:gap-10 p-2">
             {
                 stats.map(stat => (
                     <Stats key={stat.text} name={stat.stat} text={stat.text} icon={stat.icon} />

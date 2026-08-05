@@ -1,6 +1,7 @@
 import BrandLogo from "./brand-logo"
 import Link from "next/link"
 import NavLink from "./navlink";
+import Button from "./button";
 
 export default function Header() {
     const navLinks = ['home', 'about', 'training', 'why Innova?', 'services', 'contact']
@@ -16,13 +17,13 @@ export default function Header() {
                 </ul>
             </div>
             <div className="flex flex-col md:flex-row gap-3 text-sm">
-                <Link href='/login' className={`bg-indigo-950 rounded-md border border-gray-600 px-3 py-2 hover:bg-indigo-900 block`}>
+                {/* <Link href='/login' className={`bg-indigo-950 rounded-md border border-gray-600 px-3 py-2 hover:bg-indigo-900 block`}>
                     Login
-                </Link>
+                </Link> */}
 
-                <Link href='/register' className={`bg-indigo-700 rounded-md px-3 py-2 hover:bg-indigo-600 block`}>
-                    Enroll Now
-                </Link>
+                <Button padding='px-3 py-2' color='bg-indigo-950' hover='bg-indigo-900' border='border border-gray-600'>Login</Button>
+                
+                <Button padding='px-3 py-2'>Enroll Now</Button>
             </div>
         </div>
     )

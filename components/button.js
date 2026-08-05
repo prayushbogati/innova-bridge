@@ -1,11 +1,9 @@
-import Link from "next/link";
-
-export default function Button({ href, color, bg, children, border }) {
+export default function Button({ type, children, padding, color, hover, border }) {
     return (
         <div>
-            <Link href='/login' className={`bg-${bg}-950 text-${color}-950 rounded-md border border-${border}-600 px-3 py-2 hover:bg-${bg}-600 block`}>
+            <button type={type ? type : 'button'} className={`${color ? color : 'bg-indigo-800'} flex gap-2 items-center justify-center text-white rounded-lg ${padding ? `${padding}` : null} ${hover ? `hover:${hover}` : 'hover:bg-indigo-700'} w-full ${border ? border : null}`}>
                 {children}
-            </Link>
-        </div>
+            </button>
+        </div >
     )
 }

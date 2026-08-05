@@ -5,7 +5,8 @@ import { ArrowRight, Video } from "lucide-react"
 
 import StatsBar from "@/components/stats-bar"
 import HeroImg from "@/assets/images/hero-img.png"
-import LogoBar from "@/components/logo-bar"
+import LogoBar from "@/components/home/logo-bar"
+import Button from "@/components/button"
 
 import Card from "@/components/card"
 import IconCard from "@/components/icon-card"
@@ -15,46 +16,48 @@ import { cards, cardsSmall } from "@/lib/cards"
 
 export default function Home() {
   return (
-    <div className="text-white">
+    <div>
       {/* hero */}
-      <div className="bg-indigo-950">
-        <div className="px-10 py-10">
+      <div className="bg-indigo-950 text-white px-10 py-10">
+        <div className="flex justify-center lg:items-center">
+          {/* left part */}
+          <div className="flex flex-col lg:items-start max-lg:items-center max-lg:text-center lg:max-w-2/5 max-w-full mx-10">
+            <p className="inline-block text-sm bg-slate-900 py-2 px-3 rounded-2xl mb-1">#1 DevOps & Open Source Training Institute</p>
+            <h1 className="text-5xl font-bold leading-13">Build. Deploy. Automate. <br /><span className="text-indigo-600">Succeed.</span></h1>
+            <p className="my-5">Master DevOps with industry-focused training, real-time labs and expert mentorship.</p>
 
-          <div className="flex justify-center lg:items-center">
-            {/* left part */}
-            <div className="flex flex-col lg:items-start max-lg:items-center max-lg:text-center lg:max-w-2/5 max-w-full mx-10">
-              <p className="inline-block text-sm bg-slate-900 py-2 px-3 rounded-2xl mb-1">#1 DevOps & Open Source Training Institute</p>
-              <h1 className="text-5xl font-bold leading-15">Build. Deploy. Automate. <br/><span className="text-indigo-600">Succeed.</span></h1>
-              <p className="my-5">Master DevOps with industry-focused training, real-time labs and expert mentorship.</p>
+            <div className="flex flex-col items-center gap-5 sm:flex-row">
 
-              <div className="flex flex-col items-center gap-5 sm:flex-row">
-                <div className="flex items-center gap-2 bg-indigo-700 hover:bg-indigo-600 py-3 px-5 rounded-xl font-bold">
-                  <Link href=''>Explore Trainings</Link>
-                  <ArrowRight size={30} />
-                </div>
+              {/* ------------buttons used previously before button component was created---------- */}
+              {/* <div className="flex items-center gap-2 bg-indigo-800 hover:bg-indigo-700 py-3 px-5 rounded-xl font-bold">
+                <Link href=''>Explore Trainings</Link>
+                <ArrowRight size={30} />
+              </div> */}
+              {/* <div className="flex items-center gap-2 border border-gray-600 hover:bg-indigo-900 py-3 px-5 rounded-xl font-bold">
+                <Link href=''>Book a Free Demo</Link>
+                <Video size={30} />
+              </div> */}
 
-                <div className="flex items-center gap-2 border border-gray-600 hover:bg-indigo-900 py-3 px-5 rounded-xl font-bold">
-                  <Link href=''>Book a Free Demo</Link>
-                  <Video size={30} />
-                </div>
-              </div>
+              <Button padding='p-3'>Explore Trainings <span><ArrowRight size={25} /></span></Button>
 
-            </div>
+              <Button border='border border-gray-600' color='bg-indigo-950' hover='bg-indigo-900' padding='p-3'>Book a Free Demo <span><Video size={25} /></span></Button>
 
-            {/* right part */}
-            <div className="max-lg:hidden md:max-w-3/5 ml-30">
-              <Image width={500} height={150} src={HeroImg} alt="testImg" />
             </div>
           </div>
 
-          {/* stats bar */}
-          <div className="max-md:my-10 mt-10">
-            <StatsBar />
+          {/* right part */}
+          <div className="max-lg:hidden md:max-w-3/5 ml-30">
+            <Image width={500} height={150} src={HeroImg} alt="testImg" />
           </div>
+        </div>
+
+        {/* stats bar */}
+        <div className="max-md:my-10 mt-10">
+          <StatsBar />
         </div>
       </div>
 
-      <div className="text-black my-10 px-10 lg:px-20">
+      <div className="my-10 px-10 lg:px-20">
         {/* logo bar section */}
         <div>
           <h2 className="text-center text-xl mb-5">Technologies we teach</h2>
@@ -87,9 +90,8 @@ export default function Home() {
               <h2 className="font-bold text-xl leading-8">Learn. Practice. Grow. Succeed Together.</h2>
               <p>We combine expert-led training with real-world projects and hands-on labs to ensure you're job-ready from day one.</p>
 
-              <div className="flex items-center text-sm bg-indigo-950 text-white rounded-md hover:bg-indigo-900 py-2 px-3 align-start">
-                <Link href='/training' className="mr-1">View All Trainings </Link>
-                <ArrowRight size={15} />
+              <div className="text-sm">
+                <Button color='bg-indigo-950' hover='bg-indigo-900' padding='px-3 py-2'>View All Trainings <span><ArrowRight size={15} /></span></Button>
               </div>
             </div>
 

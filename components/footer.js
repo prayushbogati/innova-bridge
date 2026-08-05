@@ -5,12 +5,13 @@ import { FaInstagram } from "react-icons/fa6";
 import NavLink from "./navlink";
 import NewsLetterForm from "./newsletter-form";
 import SocialIcons from "./social-icons";
+import Link from "next/link";
 
 export default function Footer() {
     const socialIcons = [
-        { name: 'facebook', icon: <FaFacebook size={24} />, href: '' },
-        { name: 'linkedin', icon: <FaLinkedin size={24} />, href: '' },
-        { name: 'instagram', icon: <FaInstagram size={24} />, href: '' },
+        { name: 'facebook', icon: <FaFacebook size={24} />, href: 'https://www.facebook.com' },
+        { name: 'linkedin', icon: <FaLinkedin size={24} />, href: 'https://www.linkedin.com' },
+        { name: 'instagram', icon: <FaInstagram size={24} />, href: 'https://www.instagram.com' },
     ]
 
     const date = new Date();
@@ -32,7 +33,9 @@ export default function Footer() {
                     <p className="leading-6">Empowering learners with in-demand skills through industry-focused trainings and hands-on labs.</p>
                     <div className="flex gap-5">
                         {socialIcons.map(social => (
-                            <SocialIcons key={social.name} icon={social.icon} />
+                            <Link key={social.name} href={social.href} target="_blank">
+                                <SocialIcons icon={social.icon} />
+                            </Link>
                         ))}
                     </div>
                 </div>
