@@ -1,28 +1,29 @@
 import Image from "next/image"
-import { Phone, ArrowRight, Video } from "lucide-react"
-
+import { Phone, ArrowRight } from "lucide-react"
 import HeroImg from "@/assets/images/about-hero-image.png"
 import CardImg1 from "@/assets/images/card-img-1.png"
-import StatsBarWhyInnova from "@/components/stats-bar-why-innova"
+import StatsBarWhyInnova from "@/components/why-innova/stats-bar-why-innova"
 import IconCard from "@/components/icon-card"
 import Button from "@/components/button"
-import StatsBarImpact from "@/components/stats-bar-impact"
+import StatsBarImpact from "@/components/why-innova/stats-bar-impact"
 import List from "@/components/list"
 import LogoBar from "@/components/why-innova/logo-bar"
 import { cardsWhyInnova } from "@/lib/cards"
 
-export default function WhyInnova() {
+export default function WhyInnovaPage() {
     const cards = cardsWhyInnova;
+
     return (
         <div>
             {/* hero */}
-            <div className="bg-indigo-950 text-white px-10 py-10 max-w-full">
-                <div className="flex items-center gap-10">
+            <div className="bg-indigo-950 text-white px-10 lg:px-20 py-10 max-w-full">
+                <div className="flex">
                     {/* left part */}
-                    <div className="min-w-0 flex flex-col lg:items-start max-lg:items-center max-lg:text-center lg:max-w-2/5 max-w-full mx-10">
+                    <div className="min-w-0 flex flex-col lg:items-start max-lg:items-center max-lg:text-center lg:max-w-2/5 max-w-full">
                         <p className="text-sm text-indigo-700 font-bold rounded-2xl mb-1 tracking-wider">WHY INNOVA BRIDGE
                         </p>
-                        <h1 className="text-4xl md:text-5xl font-bold leading-13">More Than Training. A Path to<span className="text-indigo-600"> Transformation.</span></h1>
+                        <h1 className="text-4xl md:text-5xl font-bold leading-13">More Than Training.
+                            <br /> A Path to<span className="text-indigo-600"> Transformation.</span></h1>
                         <p className="my-5">Innova Bridge is not just a training institute. We are your growth partner in the DevOps and Cloud-native journey.</p>
 
                         <StatsBarWhyInnova />
@@ -104,7 +105,7 @@ export default function WhyInnova() {
                 {/* logo bar */}
                 <div className="my-10 text-center">
                     <p className="text-sm text-indigo-800 font-bold uppercase tracking-wider">trusted by leading companies</p>
-                    <h1 className="capitalize text-2xl font-bold my-2">our learners work at</h1>
+                    <h1 className="capitalize text-3xl font-bold my-2">our learners work at</h1>
                     <LogoBar />
                 </div>
             </div>

@@ -11,8 +11,7 @@ import { cardsAbout } from "@/lib/cards"
 import HeroImg from "@/assets/images/group-img.png"
 import BuildingImg from "@/assets/images/buiding-img.png"
 
-
-export default function About() {
+export default function AboutPage() {
     const cards = cardsAbout;
     return (
         <div className="px-10 lg:px-20 py-10">
@@ -29,11 +28,11 @@ export default function About() {
                             <ArrowRight size={30} />
                         </div> */}
 
-                        <Button padding='px-3 py-2'>Explore Trainings <span><ArrowRight size={25} /></span></Button>
+                        <Button padding='p-3'>Explore Trainings <span><ArrowRight size={25} /></span></Button>
 
                         <div className="flex items-center border border-gray-600
-                        bg-white transition-all ease-in-out duration-200 hover:scale-102 px-3 py-2 rounded-xl font-bold gap-5">
-                            <CirclePlay size={30} color="purple" />
+                        bg-white transition-all ease-in-out duration-200 hover:scale-102 p-3 rounded-xl font-bold gap-5">
+                            <CirclePlay size={25} color="purple" />
                             <Link href=''>Watch Our Story</Link>
                         </div>
                     </div>
@@ -46,7 +45,7 @@ export default function About() {
                         <div className="relative">
                             <Image width={2000} height={150} src={HeroImg} alt="testImg" className="rounded-2xl" />
 
-                            <div className="absolute -bottom-20 max-w-full">
+                            <div className="absolute -bottom-15 max-w-full">
                                 <StatsBarSmall />
                             </div>
                         </div>

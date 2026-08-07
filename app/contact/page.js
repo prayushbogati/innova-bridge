@@ -1,43 +1,11 @@
-import { ShieldQuestionMark, MessageCircle, ExternalLink, MapPin, Phone, Mail, Clock } from "lucide-react"
+import { ShieldQuestionMark, MessageCircle, ExternalLink } from "lucide-react"
 import Link from "next/link"
-import ContactForm from "@/components/contact-form"
-import ContactIconCard from "@/components/contact-icon-card"
-export default function Contact() {
-    const cards = [
-        {
-            icon: <MapPin size={30} />,
-            title: 'Visit Us',
-            desc: <ul>
-                <li>Innova Bridge Pvt. Ltd.</li>
-                <li>Kupondole, Lalitpur, Nepal</li>
-                <li>(Near Patan Hospital)</li>
-            </ul>
-        },
-        {
-            icon: <Phone size={30} />,
-            title: 'Call Us',
-            desc: <ul>
-                <li>+977 985-1234567</li>
-                <li>+977 01-5434567</li>
-            </ul>
-        },
-        {
-            icon: <Mail size={30} />,
-            title: 'Email Us',
-            desc: <ul>
-                <li>info@innovabridge.com.np</li>
-                <li>support@innovabridge.com.np</li>
-            </ul>
-        },
-        {
-            icon: <Clock size={30} />,
-            title: 'Office Hours',
-            desc: <ul>
-                <li>Sunday - Friday: 9:00 AM - 6:00 PM</li>
-                <li>Saturday: 10:00 AM - 2:00 PM</li>
-            </ul>
-        },
-    ]
+import ContactForm from "@/components/contact/contact-form"
+import ContactIconCard from "@/components/contact/contact-icon-card"
+import { cardsContact } from "@/lib/cards"
+
+export default function ContactPage() {
+    const cards = cardsContact;
     return (
         <>
             <div className="flex max-lg:justify-center bg-indigo-950 text-white px-10 lg:px-40 py-10">
@@ -67,7 +35,7 @@ export default function Contact() {
                         </div>
                     </div>
                     {/* right-side */}
-                    <div className="lg:border-l border-gray-300 lg:pl-15 flex flex-col max-lg:items-center lg:max-w-7/10">
+                    <div className="lg:border-l border-gray-200 lg:pl-15 flex flex-col max-lg:items-center lg:max-w-7/10">
                         <h3 className="text-2xl font-bold mb-2 max-lg:text-center">Send Us a Message</h3>
                         <p className="max-lg:text-center">Fill the form below and we'll get back to you as soon as possible.</p>
 

@@ -13,7 +13,6 @@ import IconCard from "@/components/icon-card"
 
 import { cards, cardsSmall } from "@/lib/cards"
 
-
 export default function Home() {
   return (
     <div>
@@ -52,7 +51,7 @@ export default function Home() {
         </div>
 
         {/* stats bar */}
-        <div className="max-md:my-10 mt-10">
+        <div className="px-10 mt-10">
           <StatsBar />
         </div>
       </div>

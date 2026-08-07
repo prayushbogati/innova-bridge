@@ -1,5 +1,5 @@
 import { LockKeyhole } from "lucide-react"
-import Input from "./input"
+import Input from "../input"
 import Button from "@/components/button"
 
 export default function ContactForm() {
