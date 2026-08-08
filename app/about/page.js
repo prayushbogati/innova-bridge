@@ -43,7 +43,7 @@ export default function AboutPage() {
                     <div className="h-20"></div>
                     <div>
                         <div className="relative">
-                            <Image width={2000} height={150} src={HeroImg} alt="testImg" className="rounded-2xl" />
+                            <Image width={2000} height={150} src={HeroImg} alt="testImg" className="rounded-2xl h-auto w-auto" />
 
                             <div className="absolute -bottom-15 max-w-full">
                                 <StatsBarSmall />
@@ -61,7 +61,7 @@ export default function AboutPage() {
             {/* mission and values */}
             <div className="flex my-10 justify-center lg:justify-between">
                 <div className="max-lg:hidden relative">
-                    <Image src={BuildingImg} width={400} height={100} alt="building image" className='rounded-2xl' />
+                    <Image src={BuildingImg} width={400} height={100} alt="building image" className='rounded-2xl h-auto w-auto' />
 
                     <p className="bg-gray-950 absolute max-w-full mx-auto bottom-0 p-2 text-lg italic text-center rounded-b-2xl text-white">"We don't just teach technology, we build careers and shape futures."</p>
                 </div>

@@ -48,7 +48,7 @@ export default function WhyInnovaPage() {
 
                     {/* right part */}
                     <div className="min-w-0 max-lg:hidden md:max-w-3/5">
-                        <Image width={1000} height={150} src={HeroImg} alt="testImg" />
+                        <Image width={1000} height={150} src={HeroImg} alt="testImg" className="h-auto w-auto" />
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@ export default function WhyInnovaPage() {
                     </div>
                 </div>
 
-                {/* star bar section */}
+                {/* stats bar section */}
                 <div className="bg-indigo-950 text-white p-5 rounded-xl">
                     <h2 className="text-xl font-bold mb-2 max-lg:text-center">Our Impact So Far</h2>
                     <StatsBarImpact />

@@ -1,5 +1,6 @@
 import { ShieldQuestionMark, MessageCircle, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import ContactForm from "@/components/contact/contact-form"
 import ContactIconCard from "@/components/contact/contact-icon-card"
 import { cardsContact } from "@/lib/cards"
@@ -8,14 +9,11 @@ export default function ContactPage() {
     const cards = cardsContact;
     return (
         <>
-            <div className="flex max-lg:justify-center bg-indigo-950 text-white px-10 lg:px-40 py-10">
+            <div className="bg-indigo-950 text-white px-10 lg:px-40 py-10">
                 <div className="max-lg:text-center lg:max-w-1/2">
                     <p className="text-indigo-600 text-sm font-bold">CONTACT US</p>
                     <h1 className="text-3xl font-bold my-3">We're Here to Help You <br /><span className="text-indigo-600"> Start Your Learning Journey</span></h1>
                     <p>Have questions about our trainings, labs or programs? Our team is ready to assist you.</p>
-                </div>
-                <div className="max-lg:hidden max-w-1/2">
-                    test-img
                 </div>
             </div>
             <div className="px-10 lg:px-40 mb-20">

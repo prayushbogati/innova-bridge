@@ -46,7 +46,7 @@ export default function Home() {
 
           {/* right part */}
           <div className="max-lg:hidden md:max-w-3/5 ml-30">
-            <Image width={500} height={150} src={HeroImg} alt="testImg" />
+            <Image width={500} height={150} src={HeroImg} alt="testImg" className="h-auto w-auto" />
           </div>
         </div>
 

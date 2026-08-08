@@ -1,7 +1,11 @@
-export default function Card({ name, desc, tutor, orgPrice, price, disc }) {
+import Image from "next/image"
+
+export default function     Card({ logo, name, desc, tutor, orgPrice, price, disc }) {
     return (
         <div className="p-5 border border-gray-200 rounded-lg flex flex-col bg-white">
-            <img alt="course image" />
+            <div className="h-20 w-20 shrink-0 relative">
+                <Image src={logo} alt={`${name} logo`} sizes="10" fill className="object-contain" />
+            </div>
             <h1 className="font-bold pt-2">{name}</h1>
             <p className="min-h-18">{desc}</p>
             <p className="text-sm">{tutor}</p>
