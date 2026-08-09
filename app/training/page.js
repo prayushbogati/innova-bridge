@@ -2,6 +2,7 @@ import StatsBar from "@/components/training/stats-bar"
 import TrainingsSection from "@/components/training/trainings-section"
 import Button from "@/components/button"
 import { MessageCircleMore, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function TrainingPage() {
     return (
@@ -25,7 +26,7 @@ export default function TrainingPage() {
 
                 <div className="flex flex-col lg:flex-row max-lg:gap-5 max-lg:text-center lg:justify-between items-center mt-5 mb-10 lg:max-w-3/5 mx-auto bg-gray-200 p-5 rounded-xl">
                     <div className="flex flex-col lg:flex-row gap-2 items-center">
-                        <MessageCircleMore size={40} color="indigo"/>
+                        <MessageCircleMore size={40} color="indigo" />
                         <div>
                             <h2 className="font-bold">Not sure which training is right for you?</h2>
                             <p className="text-sm">Talk to our training advisor and get personalized guidance.</p>
@@ -33,7 +34,11 @@ export default function TrainingPage() {
                     </div>
 
                     <div className="text-sm">
-                        <Button padding={`px-3 py-2`}>Schedule a Free Consultation <span><ArrowRight size={20} /></span></Button>
+                        <Button padding={`px-3 py-2`}>
+                            <Link href={`/contact`} className="flex gap-2 items-center">
+                                Schedule a Free Consultation <span><ArrowRight size={20} /></span>
+                            </Link>
+                        </Button>
                     </div>
                 </div>
             </div>

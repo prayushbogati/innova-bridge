@@ -28,7 +28,11 @@ export default function AboutPage() {
                             <ArrowRight size={30} />
                         </div> */}
 
-                        <Button padding='p-3'>Explore Trainings <span><ArrowRight size={25} /></span></Button>
+                        <Button padding='p-3'>
+                            <Link href={`/training`} className="flex gap-2 items-center">
+                                Explore Trainings<span><ArrowRight size={25} /></span>
+                            </Link>
+                        </Button>
 
                         <div className="flex items-center border border-gray-600
                         bg-white transition-all ease-in-out duration-200 hover:scale-102 p-3 rounded-xl font-bold gap-5">

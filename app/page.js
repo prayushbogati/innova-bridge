@@ -37,9 +37,17 @@ export default function Home() {
                 <Video size={30} />
               </div> */}
 
-              <Button padding='p-3'>Explore Trainings <span><ArrowRight size={25} /></span></Button>
+              <Button padding='p-3'>
+                <Link href={`/training`} className="flex gap-1 items-center">
+                  Explore Trainings<span><ArrowRight size={25} /></span>
+                </Link>
+              </Button>
 
-              <Button border='border border-gray-600' color='bg-indigo-950' hover='bg-indigo-900' padding='p-3'>Book a Free Demo <span><Video size={25} /></span></Button>
+              <Button border='border border-gray-600' color='bg-indigo-950' hover='bg-indigo-900' padding='p-3'>
+                <Link href={`/contact`} className="flex gap-1 items-center">
+                  Book a Free Demo <span><Video size={25} /></span>
+                </Link>
+              </Button>
 
             </div>
           </div>
@@ -77,7 +85,7 @@ export default function Home() {
             }
           </div>
 
-          <div className="flex items-center text-sm border border-indigo-700 text-indigo-700 transition-all duration-200 ease-in-out hover:font-bold rounded-sm py-2 px-3 mb-10">
+          <div className="flex items-center text-sm border border-indigo-700 text-indigo-700 transition-all duration-200 ease-in-out hover:font-bold rounded-sm py-2 px-3">
             <Link href='/training' className="mr-1">View All Trainings </Link>
             <ArrowRight size={15} />
           </div>
@@ -90,7 +98,11 @@ export default function Home() {
               <p>We combine expert-led training with real-world projects and hands-on labs to ensure you're job-ready from day one.</p>
 
               <div className="text-sm">
-                <Button color='bg-indigo-950' hover='bg-indigo-900' padding='px-3 py-2'>View All Trainings <span><ArrowRight size={15} /></span></Button>
+                <Button color='bg-indigo-950' hover='bg-indigo-900' padding='px-3 py-2'>
+                  <Link href={`/contact`} className="flex gap-1 items-center">
+                    View All Trainings <span><ArrowRight size={15} /></span>
+                  </Link>
+                </Button>
               </div>
             </div>
 

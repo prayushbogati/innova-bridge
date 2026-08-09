@@ -9,6 +9,7 @@ import StatsBarImpact from "@/components/why-innova/stats-bar-impact"
 import List from "@/components/list"
 import LogoBar from "@/components/why-innova/logo-bar"
 import { cardsWhyInnova } from "@/lib/cards"
+import Link from "next/link"
 
 export default function WhyInnovaPage() {
     const cards = cardsWhyInnova;
@@ -39,9 +40,17 @@ export default function WhyInnovaPage() {
                                 <Link href=''>Talk to Advisor</Link>
                             </div> */}
 
-                            <Button padding='p-3'>Explore Our Trainings <span> <ArrowRight size={25} /></span></Button>
+                            <Button padding='p-3'>
+                                <Link href={`/training`} className="flex gap-1 items-center">
+                                    Explore Our Trainings <span> <ArrowRight size={25} /></span>
+                                </Link>
+                            </Button>
 
-                            <Button padding='p-3' color='bg-indigo-950' hover='bg-indigo-900' border='border border-gray-600'><span><Phone size={25} /></span> Talk to Advisor</Button>
+                            <Button padding='p-3' color='bg-indigo-950' hover='bg-indigo-900' border='border border-gray-600'>
+                                <Link href={`/contact`} className="flex gap-2 items-center">
+                                    <span><Phone size={25} /></span> Talk to Advisor
+                                </Link>
+                            </Button>
                         </div>
 
                     </div>
@@ -87,7 +96,11 @@ export default function WhyInnovaPage() {
                         </ul>
 
                         <div className="text-sm max-w-1/2">
-                            <Button padding='px-3 py-2'>Start Your Journey<span> <ArrowRight size={25} /></span></Button>
+                            <Button padding='px-3 py-2'>
+                                <Link href={`/contact`} className="flex gap-2 items-center">
+                                    Start Your Journey<span> <ArrowRight size={25} /></span>
+                                </Link>
+                            </Button>
                         </div>
                     </div>
 
