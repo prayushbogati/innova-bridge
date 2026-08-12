@@ -13,7 +13,7 @@ import Image from "next/image";
 
 // ********** above div for aligning the rows of cards properly using sub-grid method as below one used simple min-h-[] to solve that (older and compatible way)*************
 
-export default function ServiceCard({ name, desc, icon, img }) {
+export default function ServiceCard({ name, desc, icon, img, slug }) {
     const Icon = icon;
     return (
         <div className="border border-gray-300 rounded-lg bg-white">
@@ -26,8 +26,8 @@ export default function ServiceCard({ name, desc, icon, img }) {
                     <Icon color='white' />
                 </div>
                 <h1 className="font-bold mb-1 min-h-12">{name}</h1>
-                <p className="text-sm min-h-18">{desc}</p>
-                <Link href={`#dynamic-route`} className="text-indigo-800 font-bold text-sm flex items-center gap-1 mt-3 hover:underline">Learn More <span><ArrowRight size={15} /></span></Link>
+                <p className="text-sm line-clamp-3">{desc}</p>
+                <Link href={`/services/${slug}`} className="text-indigo-800 font-bold text-sm flex items-center gap-1 mt-3 hover:underline">Learn More <span><ArrowRight size={15} /></span></Link>
             </div >
         </div>
     )

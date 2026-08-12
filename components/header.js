@@ -4,19 +4,19 @@ import BrandLogo from "./brand-logo"
 import Link from "next/link";
 import NavLink from "./navlink";
 import Button from "./button";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
-    // const router = useRouter();
+    const router = useRouter();
     const navLinks = ['home', 'about', 'training', 'why Innova?', 'services', 'contact']
 
-    // const handleLogin = () => {
-    //     router.push('/login');
-    // }
+    const handleLogin = () => {
+        router.push('/login');
+    }
 
-    // const handleRegister = () => {
-    //     router.push('/register');
-    // }
+    const handleRegister = () => {
+        router.push('/register');
+    }
     return (
         <div className="flex flex-col gap-5 py-5 md:flex-row items-center justify-between bg-indigo-950 text-white min-h-20 px-10 md:py-0 font-heading">
             <BrandLogo />
@@ -32,13 +32,13 @@ export default function Header() {
                     Login
                 </Link> */}
 
-                <Link href='/login'>
-                    <Button padding='px-3 py-2' color='bg-indigo-950' hover='bg-indigo-900' border='border border-gray-600'>Login</Button>
-                </Link>
+                {/* <Link href='/login'> */}
+                <Button padding='px-3 py-2' color='bg-indigo-950' hover='bg-indigo-900' border='border border-gray-600' click={handleLogin}>Login</Button>
+                {/* </Link> */}
 
-                <Link href='/register'>
-                    <Button padding='px-3 py-2'>Enroll Now</Button>
-                </Link>
+                {/* <Link href='/register'> */}
+                <Button padding='px-3 py-2' click={handleRegister}>Enroll Now</Button>
+                {/* </Link> */}
             </div>
         </div>
     )
