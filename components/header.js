@@ -25,7 +25,7 @@ export default function Header() {
     }
 
     return (
-        <div className={`bg-indigo-950 text-white flex flex-col gap-2 py-5 lg:flex-row items-center justify-between min-h-20 px-10 font-heading relative ${!isNavOpen ? 'flex max-md:flex-row md:flex-col items-center justify-between' : null}`}>
+        <div className={`bg-indigo-950 text-white flex flex-col gap-2 py-5 lg:flex-row items-center justify-between min-h-20 px-10 relative ${!isNavOpen ? 'flex max-md:flex-row md:flex-col items-center justify-between' : null}`}>
             <BrandLogo />
             <Menu className={`hidden ${!isNavOpen ? 'max-md:block' : null}`} onClick={toggleMenu} />
             <X size={30} className={`absolute right-0 top-0 m-5 hidden ${isNavOpen ? 'max-md:block' : null}`} onClick={toggleMenu} />

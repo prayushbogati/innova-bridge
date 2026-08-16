@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { Phone, ArrowRight } from "lucide-react"
 import HeroImg from "@/assets/images/about-hero-image.png"
-import CardImg1 from "@/assets/images/card-img-1.png"
 import StatsBarWhyInnova from "@/components/why-innova/stats-bar-why-innova"
 import IconCard from "@/components/icon-card"
 import Button from "@/components/button"
@@ -10,6 +9,8 @@ import List from "@/components/list"
 import LogoBar from "@/components/why-innova/logo-bar"
 import { cardsWhyInnova } from "@/lib/cards"
 import Link from "next/link"
+import Carousel from "@/components/carousel"
+import CardImg from '@/assets/images/card-img.png'
 
 export default function WhyInnovaPage() {
     const cards = cardsWhyInnova;
@@ -82,8 +83,8 @@ export default function WhyInnovaPage() {
                 </div>
 
                 {/* why choose innova section */}
-                <div className="my-10 flex flex-col md:flex-row items-center gap-10">
-                    <div className="md:max-w-2/5 flex flex-col max-md:items-center max-md:text-center lg:justify-between">
+                <div className="my-10 flex flex-col md:flex-row items-center gap-10 justify-center">
+                    <div className="w-full md:w-2/5 md:max-w-2/5 flex flex-col max-md:items-center max-md:text-center lg:justify-between">
                         <p className="text-sm text-indigo-800 font-bold uppercase tracking-wider">what makes us different</p>
                         <h1 className="capitalize text-2xl font-bold my-2">We Focus on Your Complete <span className="text-indigo-800">Growth</span></h1>
                         <p>From the first day of training to your dream job, we are with you at every step of your DevOps journey.</p>
@@ -105,12 +106,17 @@ export default function WhyInnovaPage() {
                     </div>
 
                     <div className="max-md:hidden max-w-3/5 w-full h-80 flex items-center justify-center relative">
-                        <Image src={CardImg1} sizes={20} fill alt="card image" className="object-cover rounded-xl" />
+                        <Image src={CardImg} sizes={20} fill alt="card image" className="object-cover rounded-xl" />
 
-                        <div className="bg-white text-black z-10 absolute -bottom-5 max-w-full w-7/10 p-3 text-sm rounded-lg">
-                            <p>review content...</p>
-                            <h3 className="font-bold">John Doe</h3>
-                            <p>position</p>
+                        <div className="max-md:hidden md:w-3/5 max-w-3/5 w-full flex items-center justify-center absolute -bottom-15">
+                            <Carousel
+                                baseWidth={500}
+                                autoplay
+                                autoplayDelay={3000}
+                                pauseOnHover
+                                loop
+                                round={false}
+                            />
                         </div>
                     </div>
                 </div>
