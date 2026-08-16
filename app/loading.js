@@ -1,6 +1,6 @@
 export default function Page() {
     return (
-        <div>
+        <div className="absolute text-white text-5xl text-center">
             loading...
         </div>
     )

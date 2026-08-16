@@ -4,7 +4,9 @@ import { LockKeyhole } from "lucide-react"
 import Input from "../input"
 import Button from "@/components/button"
 import { handleFormData } from "@/lib/contact-form-action"
-import { useActionState } from "react"
+import { useActionState, useEffect } from "react"
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+
 
 export default function ContactForm() {
     // inputs array skipped here!
@@ -44,8 +46,47 @@ export default function ContactForm() {
     // ]
     const [state, formAction] = useActionState(handleFormData, { message: null });
 
+    useEffect(() => {
+
+        if (!state.message) return
+
+        if (state.success) {
+            toast.success('Message sent!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            })
+        }
+        else {
+            return
+        }
+
+
+    }, [state])
+
     return (
         <form action={formAction}>
+
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={true}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition={Bounce}
+            />
+
             <div className="flex flex-col lg:grid grid-cols-2 gap-y-5 gap-x-5">
                 <Input title='name' id='name' type='text' name='name' placeholder='Enter your full name' isRequired={true} />
                 <Input title='email' id='email' type='email' name='email' placeholder='Enter your email address' isRequired={true} />
@@ -74,11 +115,12 @@ export default function ContactForm() {
             </div>
 
             {state.message && (
-                <p className={`text-xl ${state.success ? 'text-green-600' : 'text-red-500'}`}>
-                    {state.message}
+                <p className={`text-xl text-red-500`}>
+                    {state.success === false && state.message}
                 </p>
             )}
+
             <p className="flex gap-2 text-sm items-center"><LockKeyhole size={15} /><span> We respect your privacy. Your information will never be shared.</span></p>
-        </form>
+        </form >
     )
 }

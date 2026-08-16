@@ -77,7 +77,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold max-w-xl leading-10">Industry-Relevant Training to Accelerate Your DevOps Career</h1>
 
           {/* card section */}
-          <div className="flex flex-col lg:flex-row my-10 justify-center gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-4 my-10 gap-5">
             {
               cards.map(card => (
                 <Card key={card.title} image={card.logo} title={card.title} desc={card.desc} />

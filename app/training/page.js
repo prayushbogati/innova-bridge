@@ -20,7 +20,7 @@ export default function TrainingPage() {
                 </div>
             </div>
 
-            <div className="px-10 lg:px-20 py-10">
+            <div className="px-5 lg:px-20 py-10">
 
                 <TrainingsSection />
 

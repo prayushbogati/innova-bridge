@@ -22,7 +22,7 @@ export default function ServicesPage() {
                 </div>
             </div>
 
-            <div className="px-10 lg:px-20 py-10 lg:mt-15">
+            <div className="px-5 lg:px-20 py-10 lg:mt-15">
                 {/* cards section */}
 
                 <ServicesSection />

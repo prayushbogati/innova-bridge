@@ -3,8 +3,7 @@ import { services } from '@/lib/services';
 import Image from 'next/image';
 
 
-
-export  function ServicePage({ params }) {
+export default function ServicePage({ params }) {
     const { slug } = use(params);
     const service = services.find(service => (
         service.slug === slug

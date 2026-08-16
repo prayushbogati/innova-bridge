@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function     Card({ logo, name, desc, tutor, orgPrice, price, disc }) {
+export default function Card({ logo, name, desc, tutor, orgPrice, price, disc }) {
     return (
         <div className="p-5 border border-gray-200 rounded-lg flex flex-col bg-white">
             <div className="h-20 w-20 shrink-0 relative">
