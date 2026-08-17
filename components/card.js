@@ -1,17 +1,18 @@
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+// import Link from "next/link"
+// import { ArrowRight } from "lucide-react"
+// import slugify from "@/lib/services"
 
 export default function Card({ image, title, desc }) {
     return (
-        <div className="grid grid-rows-subgrid row-span-4 justify-items-center gap-5 border border-gray-200 p-5 rounded-xl">
+        <div className="zoom grid grid-rows-subgrid row-span-4 justify-items-center gap-5 border border-gray-200 p-5 rounded-xl">
             <Image height={80} width={80} src={image} alt={title}/>
             <h2 className="text-xl font-bold">{title}</h2>
             <p>{desc}</p>
-            <div className="flex text-indigo-700 text-sm items-center">
-                <Link href={`#${title.trim()}`} className="pr-2 hover:underline">View Details</Link>
+            {/* <div className="flex text-indigo-700 text-sm items-center">
+                <Link href={`${slugify(title)}`} className="pr-2 hover:underline">View Details</Link>
                 <ArrowRight size={15}/>
-            </div>
+            </div> */}
         </div>
     )
 }

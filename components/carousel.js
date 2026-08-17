@@ -1,74 +1,14 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { motion, useMotionValue, useTransform } from 'motion/react';
-
-const DEFAULT_ITEMS = [
-    {
-        review: "Innova Bridge gave me the skills, confidence and support to switch my career to DevOps. The hands-on labs and mentorship are the best!",
-        user: "Sandeep R.",
-        desc: "DevOps Engineer at TCS",
-        id: 1,
-    },
-    {
-        review: "The training was incredibly practical and the trainers genuinely cared about our progress. I landed a job within two months of completing the course.",
-        user: "Priya Sharma",
-        desc: "Cloud Engineer at Amazon",
-        id: 2,
-    },
-    {
-        review: "I came in with zero background in tech and left with a solid foundation in Kubernetes and CI/CD. The mock interviews really boosted my confidence.",
-        user: "Rajesh Thapa",
-        desc: "Site Reliability Engineer at Leapfrog Technology",
-        id: 3,
-    },
-    {
-        review: "Innova Bridge's placement assistance made all the difference. The resume workshops and referrals helped me get multiple offers to choose from.",
-        user: "Anita Gurung",
-        desc: "DevSecOps Engineer at Deloitte",
-        id: 4,
-    },
-    {
-        review: "The real-world projects gave me exactly what my resume was missing. I could speak confidently about my experience in every interview I gave.",
-        user: "Bikash Karki",
-        desc: "Platform Engineer at Cotiviti",
-        id: 5,
-    }
-];
+import { motion, useMotionValue } from 'motion/react';
+import { DEFAULT_ITEMS } from '@/lib/carousel-items';
+import CarouselItem from './carousel-item';
 
 const DRAG_BUFFER = 0;
 const VELOCITY_THRESHOLD = 500;
 const GAP = 16;
 const SPRING_OPTIONS = { type: 'spring', stiffness: 300, damping: 30 };
-
-function CarouselItem({ item, index, itemWidth, round, trackItemOffset, x, transition }) {
-    const range = [-(index + 1) * trackItemOffset, -index * trackItemOffset, -(index - 1) * trackItemOffset];
-    const outputRange = [90, 0, -90];
-    const rotateY = useTransform(x, range, outputRange, { clamp: false });
-
-    return (
-        <motion.div
-            key={`${item?.id ?? index}-${index}`}
-            className={`relative shrink-0 flex flex-col ${round
-                ? 'items-center justify-center text-center bg-[#120F17] border-0'
-                : 'items-start justify-between bg-gray-200 rounded-[12px]'
-                } overflow-hidden cursor-grab active:cursor-grabbing`}
-            style={{
-                width: itemWidth,
-                height: round ? itemWidth : '100%',
-                rotateY: rotateY,
-                ...(round && { borderRadius: '50%' })
-            }}
-            transition={transition}
-        >
-            <div className="p-5">
-                <p className="text-sm">{item.review}</p>
-                <h2 className="mt-1 font-bold text-sm">{item.user}</h2>
-                <p className="text-sm">{item.desc}</p>
-            </div>
-        </motion.div>
-    );
-}
 
 export default function Carousel({
     items = DEFAULT_ITEMS,

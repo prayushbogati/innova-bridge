@@ -108,7 +108,7 @@ export default function WhyInnovaPage() {
                     <div className="max-md:hidden max-w-3/5 w-full h-80 flex items-center justify-center relative">
                         <Image src={CardImg} sizes={20} fill alt="card image" className="object-cover rounded-xl" />
 
-                        <div className="max-md:hidden md:w-3/5 max-w-3/5 w-full flex items-center justify-center absolute -bottom-15">
+                        <div className="max-md:hidden w-full flex items-center justify-center absolute -bottom-15">
                             <Carousel
                                 baseWidth={500}
                                 autoplay

@@ -28,7 +28,7 @@ export default function Header() {
         <div className={`bg-indigo-950 text-white flex flex-col gap-2 py-5 lg:flex-row items-center justify-between min-h-20 px-10 relative ${!isNavOpen ? 'flex max-md:flex-row md:flex-col items-center justify-between' : null}`}>
             <BrandLogo />
             <Menu className={`hidden ${!isNavOpen ? 'max-md:block' : null}`} onClick={toggleMenu} />
-            <X size={30} className={`absolute right-0 top-0 m-5 hidden ${isNavOpen ? 'max-md:block' : null}`} onClick={toggleMenu} />
+            <X size={30} className={`absolute right-3 top-0 m-6 hidden ${isNavOpen ? 'max-md:block' : null}`} onClick={toggleMenu} />
             <div className={`${isNavOpen ? 'max-md:block' : 'max-md:hidden'}`}>
                 <ul className="flex flex-col items-center justify-center md:flex-row gap-5 py-5 md:gap-10 md:mx-10">
                     {navLinks.map(link => (

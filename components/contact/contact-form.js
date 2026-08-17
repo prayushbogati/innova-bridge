@@ -107,7 +107,7 @@ export default function ContactForm() {
             </div>
             <div className="pt-3">
                 <label htmlFor="message">Message *</label><br />
-                <textarea name="message" id="message" rows={5} placeholder="Write your message here..." className="border border-gray-300 rounded-md w-full max-h-50 px-3 py-2 text-sm bg-white"></textarea>
+                <textarea name="message" id="message" rows={5} placeholder="Write your message here..." className="border border-gray-300 rounded-md w-full max-h-50 px-3 py-2 text-sm bg-white" required></textarea>
             </div>
 
             <div className="py-3">

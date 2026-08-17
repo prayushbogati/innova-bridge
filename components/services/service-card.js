@@ -16,7 +16,7 @@ import Image from "next/image";
 export default function ServiceCard({ name, desc, icon, img, slug }) {
     const Icon = icon;
     return (
-        <div className="border border-gray-300 rounded-lg bg-white">
+        <div className="zoom border border-gray-300 rounded-lg bg-white">
             <div className="h-50 max-w-full relative">
                 <Image src={img} fill className="object-cover rounded-t-lg" alt={`${name} image`} />
             </div>
