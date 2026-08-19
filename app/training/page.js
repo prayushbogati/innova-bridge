@@ -3,15 +3,23 @@ import TrainingsSection from "@/components/training/trainings-section"
 import Button from "@/components/button"
 import { MessageCircleMore, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { verifyAuth } from "@/lib/auth"
+import { redirect } from "next/navigation"
 
-export default function TrainingPage() {
+export default async function TrainingPage() {
+    const result = await verifyAuth();
+
+    if (!result.user) {
+        return redirect('/login');
+    }
+
     return (
         <div>
             <div className="bg-indigo-950 text-white px-10 lg:px-20 py-10 max-w-full">
                 {/* hero-section */}
                 <div className="flex gap-20 items-center">
                     <div className="lg:max-w-1/2 max-lg:text-center">
-                        <h1 className="text-4xl font-bold mb-3 ">Industry-Focused Trainings to Accelerate Your DevOps Career</h1>
+                        <h1 className="text-4xl font-bold mb-3 ">Industry-Focused Trainings to <span className="text-indigo-600">Accelerate Your DevOps Career</span></h1>
                         <p className="text-lg">Learn from experts, practice in real-time labs and get certified.</p>
                     </div>
                     <div className="max-lg:hidden max-w-1/2">

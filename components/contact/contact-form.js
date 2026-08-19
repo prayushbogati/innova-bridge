@@ -3,7 +3,7 @@
 import { LockKeyhole } from "lucide-react"
 import Input from "../input"
 import Button from "@/components/button"
-import { handleFormData } from "@/lib/contact-form-action"
+import { handleFormData } from "@/actions/contact-form-action"
 import { useActionState, useEffect } from "react"
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 
@@ -44,13 +44,13 @@ export default function ContactForm() {
     //         isRequired: true,
     //     },
     // ]
-    const [state, formAction] = useActionState(handleFormData, { message: null });
+    const [formState, formAction] = useActionState(handleFormData, { message: null });
 
     useEffect(() => {
 
-        if (!state.message) return
+        if (!formState.message) return
 
-        if (state.success) {
+        if (formState.success) {
             toast.success('Message sent!', {
                 position: "top-right",
                 autoClose: 5000,
@@ -68,7 +68,7 @@ export default function ContactForm() {
         }
 
 
-    }, [state])
+    }, [formState])
 
     return (
         <form action={formAction}>
@@ -114,9 +114,9 @@ export default function ContactForm() {
                 <Button type="submit" padding='p-2'>Send Message</Button>
             </div>
 
-            {state.message && (
+            {formState.message && (
                 <p className={`text-xl text-red-500`}>
-                    {state.success === false && state.message}
+                    {formState.success === false && formState.message}
                 </p>
             )}
 
